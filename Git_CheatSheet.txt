@@ -1,0 +1,63 @@
+# Git Configuration
+-> git config --global user.name "username"         -> config user's name details globally
+-> git config --global user.email "email"           -> config user's mail details globally
+if you want to set these to particular folder or repo remove --global to set for folder specific
+-----------------------------------------------------------------------------------------------
+# Git repo initialization
+-> git init                                         -> initalize git repo
+-> git remote add origin "URL"                      -> add your git repo url for push or pull purpose
+-----------------------------------------------------------------------------------------------
+# Git Manipulation
+-> git add .                                        -> add all your changes to staged index for next Commit
+-> git add <file>                                   -> add particular file to staged or index for next commit
+-> git restore --staged <file>                      -> to unstage the changes that are ready for next commit
+-> git restore <file>                               -> to undo changes made to a file that going to staged
+-> git commit -m "msg"                              -> to commit your changes. Commit should have a message
+-> git push -u origin master                        -> to push your commited changes to remote repo
+-> git status                                       -> to know status of your tree or repo
+-> git status -s (or) --short                       -> to know short status of your tree or repo
+-----------------------------------------------------------------------------------------------
+# Git Advanced
+-> git diff -> serves two purposes
+    -> git diff --stagaed                           -> what changes I Staged for next commit
+        -> git diff --staged --no-renames           -> what changes I stagged for next commit and show up the files not by hash reference.
+    -> git diff                                     -> changes that I made for file, but file not staged  
+-> git commit -a -m "msg"                           -> command to skip the file to stage and then commit      
+-> git log                                          -> shows commit history
+    -> git log -n                                   -> shows commit history only (n) count 
+    -> git log --oneline                            -> show commit history in singleline(Short Description)
+    -> git log --stat                               -> shows commit history with detailed insertions(+) & deletions(-)
+    -> git log --patch                              -> shows commit history with reference to git diff  with detailed Description
+-> git rm <file>                                    -> to remove file from git repo
+-> git rm --chached <file>                          -> to make file untracked, but no deletion   
+-> git mv <oldFileName> <newFileName>               -> to change existing name of file to new one 
+-------------------------------------------------------------------------------------------------
+# Git Branching
+-> git branch <branch_Name>                         -> to create new branch
+-> git checkout <branch_Name>                       -> to change PWD to that branch
+-> git checkout -b <branch_Name>                    -> creates branch and checkout automatically
+-> git stash                                        -> put your current changes to stash{to work some other time}
+-> git stash list                                   -> gives the list of stashes in that local machine
+-> git stash pop                                    -> to apply your recent stash changes to WIP Directory
+-> git stash show                                   -> gives detailed Description of stash log   
+-> git merge <branch_Name>                          -> merge the branch into master
+-> git reset --soft <commit_id>                     -> revert the commit into staging or indexing
+-> git reset (or) --mixed <commit_id>               -> revert the commit into working Directory
+-> git reset --hard                                 -> move all commits to trash
+--------------------------------------------------------------------------------------------------
+create a new repository on the command line
+
+echo "# Java-Pluralsight" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin git@github.com:raghuramOP/Java-Pluralsight.git
+git push -u origin master
+--------------------------------------------------------------------------------------------------
+push an existing repository from the command line
+
+git remote add origin git@github.com:raghuramOP/Java-Pluralsight.git
+git branch -M master
+git push -u origin master
+

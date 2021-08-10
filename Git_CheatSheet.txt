@@ -1,31 +1,38 @@
 # Git Configuration
 -> git config --global user.name "username"         -> config user's name details globally
 -> git config --global user.email "email"           -> config user's mail details globally
-if you want to set these to particular folder or repo remove --global to set for folder specific
+if you want to set these to particular folder or repo remove --global  or replace with --local to set for folder specific
 -----------------------------------------------------------------------------------------------
 # Git repo initialization
--> git init                                         -> initalize git repo
--> git remote add origin "URL"                      -> add your git repo url for push or pull purpose
+-> git init                                         -> initialize git repo
+-> git clone                                        -> create a local copy of remote repository
+    -> git clone <url> [projectName]                -> create a local copy of  remote with specified name
+-> git remote
+    -> git  remote -v | --verbose                   -> display info about remote repo associated with local repo
+    -> git remote add origin "URL"                  -> add your git repo url for push or pull purpose
 -----------------------------------------------------------------------------------------------
 # Git Manipulation
 -> git add .                                        -> add all your changes to staged index for next Commit
 -> git add <file>                                   -> add particular file to staged or index for next commit
 -> git restore --staged <file>                      -> to unstage the changes that are ready for next commit
--> git restore <file>                               -> to undo changes made to a file that going to staged
+-> git restore <file>                               -> to undo changes made to a file that going to stage
 -> git commit -m "msg"                              -> to commit your changes. Commit should have a message
--> git push -u origin master                        -> to push your commited changes to remote repo
+-> git push [-u] [<repository>] [<branch>]          -> <repository> can be a name (shortcut) or URL. -u track this branch (--set-upstream)
+    -> git push -u origin master                    -> to push your committed changes to remote repo
 -> git status                                       -> to know status of your tree or repo
+    -> git status -s                                -> to  get short status
 -> git status -s (or) --short                       -> to know short status of your tree or repo
 -----------------------------------------------------------------------------------------------
 # Git Advanced
 -> git diff -> serves two purposes
-    -> git diff --stagaed                           -> what changes I Staged for next commit
-        -> git diff --staged --no-renames           -> what changes I stagged for next commit and show up the files not by hash reference.
+    -> git diff --staged                           -> what changes I Staged for next commit
+        -> git diff --staged --no-renames           -> what changes I staged for next commit and show up the files not by hash reference.
     -> git diff                                     -> changes that I made for file, but file not staged  
 -> git commit -a -m "msg"                           -> command to skip the file to stage and then commit      
 -> git log                                          -> shows commit history
     -> git log -n                                   -> shows commit history only (n) count 
-    -> git log --oneline                            -> show commit history in singleline(Short Description)
+    -> git log --oneline                            -> show commit history in single line(Short Description)
+        -> git log --oneline -n                     -> (n) refers to integer, and can view (n) most recent logs
     -> git log --stat                               -> shows commit history with detailed insertions(+) & deletions(-)
     -> git log --patch                              -> shows commit history with reference to git diff  with detailed Description
 -> git rm <file>                                    -> to remove file from git repo
@@ -60,4 +67,16 @@ push an existing repository from the command line
 git remote add origin git@github.com:raghuramOP/Java-Pluralsight.git
 git branch -M master
 git push -u origin master
+--------------------------------------------------------------------------------------------------
+Git  Notations
+
+-f or --flag Change the command's behavior
+| Or
+[optional]
+<placeholder>
+[<optional placeholder>]
+() Grouping
+-- Disambiguate the command
+... Multiple occurrences possible
+
 

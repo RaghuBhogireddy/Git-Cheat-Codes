@@ -14,7 +14,7 @@ if you want to set these to particular folder or repo remove --global  or replac
 # Git Manipulation
 -> git add .                                        -> add all your changes to staged index for next Commit
 -> git add <file>                                   -> add particular file to staged or index for next commit
--> git restore --staged <file>                      -> to unstage the changes that are ready for next commit
+-> git restore --staged <file>                      -> to unStage the changes that are ready for next commit
 -> git restore <file>                               -> to undo changes made to a file that going to stage
 -> git commit -m "msg"                              -> to commit your changes. Commit should have a message
 -> git push [-u] [<repository>] [<branch>]          -> <repository> can be a name (shortcut) or URL. -u track this branch (--set-upstream)
@@ -27,17 +27,19 @@ if you want to set these to particular folder or repo remove --global  or replac
 -> git diff -> serves two purposes
     -> git diff --staged                           -> what changes I Staged for next commit
         -> git diff --staged --no-renames           -> what changes I staged for next commit and show up the files not by hash reference.
-    -> git diff                                     -> changes that I made for file, but file not staged  
--> git commit -a -m "msg"                           -> command to skip the file to stage and then commit      
+    -> git diff                                     -> changes that I made for file, but file not staged
+-> git commit -a -m "msg"                           -> command to skip the file to stage and then commit
 -> git log                                          -> shows commit history
-    -> git log -n                                   -> shows commit history only (n) count 
-    -> git log --oneline                            -> show commit history in single line(Short Description)
+    -> git log -n                                   -> shows commit history only (n) count
+    -> git log --oneline                            -> show commit history in single line(Short Description), reduces commit Id to 7
         -> git log --oneline -n                     -> (n) refers to integer, and can view (n) most recent logs
     -> git log --stat                               -> shows commit history with detailed insertions(+) & deletions(-)
     -> git log --patch                              -> shows commit history with reference to git diff  with detailed Description
 -> git rm <file>                                    -> to remove file from git repo
--> git rm --chached <file>                          -> to make file untracked, but no deletion   
--> git mv <oldFileName> <newFileName>               -> to change existing name of file to new one 
+-> git rm --chached <file>                          -> to make file untracked, but no deletion
+-> git mv <oldFileName> <newFileName>               -> to change existing name of file to new one
+-> git log --oneline --graph                        -> to view in graphical way for git commits
+-> git show commitId                                -> shows details about commit
 -------------------------------------------------------------------------------------------------
 # Git Branching
 -> git branch <branch_Name>                         -> to create new branch
@@ -78,5 +80,3 @@ Git  Notations
 () Grouping
 -- Disambiguate the command
 ... Multiple occurrences possible
-
-
